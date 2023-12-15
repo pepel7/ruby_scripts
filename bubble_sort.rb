@@ -2,11 +2,9 @@ def bubble_sort(array)
   loop do
     not_sorted = false
     array.each_with_index do |item, index|
-      next if index == array.length - 1 # the last item has no pair, so we just stop it
+      next if index == array.length - 1 # the last item has no pair, so throw it away
       if item > array[index + 1]
-        temp = item #swapping
-        array[index] = array[index + 1]
-        array[index + 1] = temp
+        array[index], array[index + 1] = array[index + 1], array[index]
         not_sorted = true
       end
     end
