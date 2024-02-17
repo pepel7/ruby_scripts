@@ -8,17 +8,13 @@ def caesar_cipher(string, shift_factor)
 
     shifted_index = alphabet.find_index(letter) + shift_factor
 
-    if shifted_index > 26
+    while shifted_index >= 26
       shifted_index -= 26
     end
 
     shifted_letter = alphabet[shifted_index]
 
-    if original_letter =~ /[A-Z]/
-      shifted_letter = shifted_letter.upcase
-    else shifted_letter end
+    original_letter =~ /[A-Z]/ ? shifted_letter.upcase : shifted_letter
   end
   string_arr.join
 end
-
-p caesar_cipher("Ayo, what's up, bro? It's Kel!", 5)
